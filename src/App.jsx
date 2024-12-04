@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import FileUploader from './components/FileUploader';
-import { uploadFile } from './utils/ddc-client.jsx'; // добавьте расширение .jsx
+import { uploadFile } from './utils/ddc-client.jsx';
 
 function App() {
   const [uploadedFile, setUploadedFile] = useState(null);
@@ -14,7 +14,7 @@ function App() {
       setUploadedFile({
         name: file.name,
         cid: result.cid,
-        url: `https://storage.mainnet.cere.network/1052/${result.cid}`
+        url: `https://storage.dragon.cere.network/1052/${result.cid}`
       });
     } catch (error) {
       console.error('Error uploading file:', error);

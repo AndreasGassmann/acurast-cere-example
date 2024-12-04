@@ -20,7 +20,7 @@ export async function initializeDDC() {
       ddcClient = await DdcClient.create(signer, {
         ...MAINNET,
         blockchain: "wss://archive.mainnet.cere.network/ws",
-        baseUrl: "https://storage.mainnet.cere.network",
+        baseUrl: "https://storage.dragon.cere.network",
         logLevel: 'debug'
       });
 

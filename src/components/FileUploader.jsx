@@ -14,6 +14,12 @@ function FileUploader({ onFileUpload, disabled }) {
     setDragging(false);
   };
 
+  const handleClick = () => {
+    if (!disabled) {
+      document.querySelector('input[type="file"]').click();
+    }
+  };
+
   return (
     <div
       className={`upload-area ${dragging ? 'dragging' : ''}`}
@@ -21,6 +27,8 @@ function FileUploader({ onFileUpload, disabled }) {
       onDragEnter={() => setDragging(true)}
       onDragLeave={() => setDragging(false)}
       onDrop={handleDrop}
+      onClick={handleClick}
+      style={{ cursor: disabled ? 'not-allowed' : 'pointer' }}
     >
       <input
         type="file"
@@ -30,6 +38,7 @@ function FileUploader({ onFileUpload, disabled }) {
           if (file) onFileUpload(file);
         }}
         disabled={disabled}
+        style={{ display: 'none' }}
       />
       <p>Drag and drop a HEIC file here, or click to select</p>
     </div>
